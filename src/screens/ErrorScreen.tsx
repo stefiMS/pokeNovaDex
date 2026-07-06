@@ -15,10 +15,6 @@ export const ErrorScreen = ({ onRetry, error }: ErrorScreenProps) => {
         color={COLORS.interactive}
       />
       <Text style={styles.title}>¡Ups! No pudimos cargar los Pokémon</Text>
-
-      {/* <Text style=>
-        Por favor verifica tu conexión e intenta de nuevo.
-      </Text> */}
       {error && (
         <Text style={styles.description}>
           {typeof error === 'string'
@@ -40,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 24,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.surface,
     flexDirection: 'column',
   },
 
@@ -68,7 +64,7 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    color: '#FFFFFF',
+    color: COLORS.surface,
     fontWeight: '600',
     fontSize: 16,
   },

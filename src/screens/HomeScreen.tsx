@@ -5,7 +5,6 @@ import {
   ActivityIndicator,
   Text,
   RefreshControl,
-  Dimensions,
   TouchableOpacity,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -43,7 +42,6 @@ export const HomeScreen = () => {
   const renderPokemonCard = useCallback(({ item }: { item: PokemonItem }) => {
     const pokemonId = Number(getPokemonId(item.url));
     const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`;
-    // const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/pokemon/other/official-artwork/${pokemonId}.png`;
 
     return (
       <TouchableOpacity
@@ -100,16 +98,7 @@ export const HomeScreen = () => {
   }
 
   if (isError) {
-    return (
-      <ErrorScreen onRetry={refetch} error={error?.message || error} />
-      // <View style={styles.centerContainer}>
-      //   <Text style={styles.errorEmoji}>❌</Text>
-      //   <Text style={styles.errorText}>Error al cargar pokémons</Text>
-      //   <Text style={styles.errorMessage}>
-      //     {error?.message || 'Intenta de nuevo más tarde'}
-      //   </Text>
-      // </View>
-    );
+    return <ErrorScreen onRetry={refetch} error={error?.message || error} />;
   }
 
   if (!allPokemons || allPokemons.length === 0) {
@@ -185,7 +174,7 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontSize: 18,
-    color: '#EF5350',
+    color: COLORS.error,
     marginBottom: 8,
     fontWeight: '600',
   },

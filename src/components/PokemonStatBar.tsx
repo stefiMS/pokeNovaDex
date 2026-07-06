@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     height: 20,
   },
   value: {
-    // width: 40,
     textAlign: 'right',
     fontSize: 14,
     fontWeight: '600',
