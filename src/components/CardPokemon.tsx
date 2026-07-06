@@ -1,0 +1,88 @@
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { COLORS } from '../theme';
+// import { Ionicons } from '@expo/vector-icons';
+
+type CardPokemonProps = {
+  imageUrl?: string;
+  name: string;
+  // types: PokemonType[];
+  id: number;
+};
+
+export const CardPokemon = ({
+  imageUrl,
+  name,
+  // types,
+  id,
+}: CardPokemonProps) => {
+  return (
+    <View style={styles.card}>
+      <View style={styles.column1}>
+        <Image source={{ uri: imageUrl }} style={{ width: 100, height: 100 }} />
+      </View>
+      <View style={styles.column2}>
+        <Text style={styles.pokemonId}># {id}</Text>
+        <Text style={styles.namePokemon}>{name}</Text>
+        {/* <View style={styles.sectionTypes}>
+          {types.map((type) => (
+            <TagType key={type} type={type} />
+          ))}
+        </View> */}
+      </View>
+      {/* <View style={styles.column3}>
+        <Ionicons
+          name="arrow-forward"
+          // name="arrow-forward-outline"
+          size={24}
+          color={COLORS.gray500}
+        />
+      </View> */}
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: 20,
+    // backgroundColor: `${COLORS.cardBackground}`,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderWidth: 1,
+    borderColor: `${COLORS.border}`,
+    flexDirection: 'row',
+    // alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 8,
+  },
+  column1: {
+    flex: 1,
+  },
+  column2: {
+    flex: 2,
+    flexDirection: 'column',
+    gap: 4,
+    justifyContent: 'center',
+  },
+  column3: {
+    alignSelf: 'center',
+  },
+  sectionTypes: {
+    flexDirection: 'row',
+    gap: 4,
+    // marginTop: 5,
+  },
+  namePokemon: {
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  pokemonId: {
+    color: `${COLORS.gray100}`,
+    fontSize: 14,
+    fontWeight: '600',
+    backgroundColor: `${COLORS.tagIdPokemon}`,
+    paddingVertical: 2,
+    paddingHorizontal: 8,
+    borderRadius: 4,
+    alignSelf: 'flex-start',
+  },
+});

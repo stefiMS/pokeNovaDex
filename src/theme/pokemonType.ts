@@ -1,0 +1,43 @@
+export const COLORS_POKEMON_TYPE = {
+  normal: '#A8A77A',
+  fire: '#EE8130',
+  water: '#6390F0',
+  electric: '#F7D02C',
+  grass: '#7AC74C',
+  ice: '#96D9D6',
+  fighting: '#C22E28',
+  poison: '#A33EA1',
+  ground: '#E2BF65',
+  flying: '#A98FF3',
+  psychic: '#F95587',
+  bug: '#A6B91A',
+  rock: '#B6A136',
+  ghost: '#735797',
+  dragon: '#6F35FC',
+  dark: '#705746',
+  steel: '#B7B7CE',
+  fairy: '#D685AD',
+} as const;
+
+export type PokemonType = keyof typeof COLORS_POKEMON_TYPE;
+
+export const POKEMON_TYPE_LABELS: Record<PokemonType, string> = {
+  normal: 'NORMAL',
+  fire: 'FUEGO',
+  water: 'AGUA',
+  electric: 'ELÉCTRICO',
+  grass: 'PLANTA',
+  ice: 'HIELO',
+  fighting: 'LUCHA',
+  poison: 'VENENO',
+  ground: 'TIERRA',
+  flying: 'VOLADOR',
+  psychic: 'PSÍQUICO',
+  bug: 'BICHO',
+  rock: 'ROCA',
+  ghost: 'FANTASMA',
+  dragon: 'DRAGÓN',
+  dark: 'SINIESTRO',
+  steel: 'ACERO',
+  fairy: 'HADA',
+};
