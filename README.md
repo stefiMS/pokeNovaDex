@@ -52,7 +52,7 @@ Una vez validada correctamente la información, los datos del entrenador son alm
 
 Puedes visualizar una demostración de la aplicación:
 
-./docs/images/demogif.gif
+![Demo de la aplicación](docs/images/demogif.gif)
 
 ---
 
