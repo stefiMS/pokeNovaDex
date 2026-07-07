@@ -1,20 +1,13 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { COLORS } from '../theme';
-// import { Ionicons } from '@expo/vector-icons';
 
 type CardPokemonProps = {
   imageUrl?: string;
   name: string;
-  // types: PokemonType[];
   id: number;
 };
 
-export const CardPokemon = ({
-  imageUrl,
-  name,
-  // types,
-  id,
-}: CardPokemonProps) => {
+export const CardPokemon = ({ imageUrl, name, id }: CardPokemonProps) => {
   return (
     <View style={styles.card}>
       <View style={styles.column1}>
@@ -23,20 +16,7 @@ export const CardPokemon = ({
       <View style={styles.column2}>
         <Text style={styles.pokemonId}># {id}</Text>
         <Text style={styles.namePokemon}>{name}</Text>
-        {/* <View style={styles.sectionTypes}>
-          {types.map((type) => (
-            <TagType key={type} type={type} />
-          ))}
-        </View> */}
       </View>
-      {/* <View style={styles.column3}>
-        <Ionicons
-          name="arrow-forward"
-          // name="arrow-forward-outline"
-          size={24}
-          color={COLORS.gray500}
-        />
-      </View> */}
     </View>
   );
 };
@@ -44,13 +24,11 @@ export const CardPokemon = ({
 const styles = StyleSheet.create({
   card: {
     borderRadius: 20,
-    // backgroundColor: `${COLORS.cardBackground}`,
     paddingHorizontal: 20,
     paddingVertical: 12,
     borderWidth: 1,
     borderColor: `${COLORS.border}`,
     flexDirection: 'row',
-    // alignItems: 'center',
     justifyContent: 'space-between',
     gap: 8,
   },
@@ -69,7 +47,6 @@ const styles = StyleSheet.create({
   sectionTypes: {
     flexDirection: 'row',
     gap: 4,
-    // marginTop: 5,
   },
   namePokemon: {
     fontWeight: 'bold',

@@ -1,6 +1,5 @@
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -11,13 +10,12 @@ import { TextFieldInput } from '../components/TextFieldInput';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { schemaStep1 } from '../utils';
 import { useTrainerStore } from '../store/useTrainerStore';
+import { Step1ScreenNavigationProp } from '../types/forms';
 
 type FormData = yup.InferType<typeof schemaStep1>;
 
-type NavigationProp = NativeStackNavigationProp<any>;
-
 export const Step1Screen = () => {
-  const navigation = useNavigation<NavigationProp>();
+  const navigation = useNavigation<Step1ScreenNavigationProp>();
   const setTrainer = useTrainerStore((state) => state.setTrainer);
 
   const {

@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,12 +11,12 @@ import { DISTRICT_LIST, POKEMON_TYPE_EMOJIS } from '../constants';
 import { Stepper } from '../components/Stepper';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { useTrainerStore } from '../store/useTrainerStore';
+import { Step2ScreenNavigationProp } from '../types/forms';
 
 import * as yup from 'yup';
 import { step2Schema } from '../utils';
 
 type FormData = yup.InferType<typeof step2Schema>;
-type NavigationProp = NativeStackNavigationProp<any>;
 
 const ALL_POKEMON_TYPES: PokemonType[] = [
   'normal',
@@ -41,7 +40,7 @@ const ALL_POKEMON_TYPES: PokemonType[] = [
 ];
 
 export const Step2Screen = () => {
-  const navigation = useNavigation<NavigationProp>();
+  const navigation = useNavigation<Step2ScreenNavigationProp>();
   const setTrainer = useTrainerStore((state) => state.setTrainer);
   const [isDistrictOpen, setIsDistrictOpen] = useState(false);
 

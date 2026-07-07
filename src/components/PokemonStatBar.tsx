@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-
+import { getStatColor } from '../utils/component';
 import { PokemonStatBarProps } from '../types';
 
 export const PokemonStatBar = ({ label, value }: PokemonStatBarProps) => {
@@ -24,13 +24,6 @@ export const PokemonStatBar = ({ label, value }: PokemonStatBarProps) => {
       <Text style={styles.value}>{value}</Text>
     </View>
   );
-};
-
-const getStatColor = (value: number) => {
-  if (value >= 100) return '#22C55E';
-  if (value >= 70) return '#3B82F6';
-
-  return '#84CC16';
 };
 
 const styles = StyleSheet.create({

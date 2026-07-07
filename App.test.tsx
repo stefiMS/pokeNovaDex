@@ -1,12 +1,25 @@
-import { render } from "@testing-library/react-native";
-import App from "./App";
+import React from 'react';
+import { render } from '@testing-library/react-native';
 
-describe("App", () => {
-  it("renders welcome text", async () => {
-    const { getByText } = await render(<App />);
+import App from './App';
 
-    expect(
-      getByText("Open up App.tsx to start working on your app!"),
-    ).toBeTruthy();
+jest.mock('@react-navigation/native', () => ({
+  NavigationContainer: ({ children }: { children: React.ReactNode }) =>
+    children,
+}));
+
+jest.mock('react-native-safe-area-context', () => ({
+  SafeAreaProvider: ({ children }: { children: React.ReactNode }) => children,
+}));
+
+jest.mock('./src/navigation/AppNavigator', () => ({
+  AppNavigator: () => null,
+}));
+
+describe('App', () => {
+  it('renderiza la aplicación sin errores', () => {
+    const screen = render(<App />);
+
+    expect(screen).toBeTruthy();
   });
 });

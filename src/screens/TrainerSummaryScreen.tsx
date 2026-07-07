@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { COLORS, POKEMON_TYPE_LABELS } from '../theme';
 import { POKEMON_TYPE_EMOJIS } from '../constants';
@@ -8,11 +7,10 @@ import { Stepper } from '../components/Stepper';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { useTrainerStore } from '../store/useTrainerStore';
 import { Ionicons } from '@expo/vector-icons';
-
-type NavigationProp = NativeStackNavigationProp<any>;
+import { TrainerSummaryScreenNavigationProp } from '../types/forms';
 
 export const TrainerSummaryScreen = () => {
-  const navigation = useNavigation<NavigationProp>();
+  const navigation = useNavigation<TrainerSummaryScreenNavigationProp>();
   const trainer = useTrainerStore((state) => state.trainer);
 
   const handleEdit = () => {

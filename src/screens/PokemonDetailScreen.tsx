@@ -43,7 +43,10 @@ export const PokemonDetailScreen = () => {
     >
       <View style={styles.containerHeader}>
         <View style={styles.headerBackButton}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            accessibilityLabel="go-back"
+          >
             <Ionicons
               name="arrow-back"
               size={24}
