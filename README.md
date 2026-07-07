@@ -123,7 +123,6 @@ Antes de ejecutar el proyecto asegúrate de tener instalado:
 
 - Node.js 24.x
 - pnpm 11.x
-- Expo CLI
 
 Verificar versiones instaladas:
 
@@ -200,9 +199,9 @@ A continuación se presentan los resultados de cobertura obtenidos mediante Jest
 
 ## Resumen de Cobertura
 
-./docs/images/coberturaPu.png
+![Cobertura PU](docs/images/coberturaPu.png)
 
-./docs/images/totalTest.png
+![Total Test](docs/images/totalTest.png)
 
 ### Métricas evaluadas
 
